@@ -55,7 +55,9 @@ jobs:
       uses: azure/CLI@v1
       with:
         inlineScript: >
-          az config set bicep.use_binary_from_path=False
+          echo "config set bicep.use_binary_from_path=false"
+          az config set bicep.use_binary_from_path=false
+          echo "END config set bicep.use_binary_from_path=false"
           az bicep install
           echo "Creating resources"
           echo "Executing az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file '/github/workspace/Azure/main.bicep' --debug"
@@ -147,7 +149,6 @@ jobs:
     - name: Installing Container Apps extension
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.30.0
         inlineScript: >
           echo "Installing containerapp extension"
 
@@ -164,7 +165,6 @@ jobs:
     - name: Deploy Silo
       uses: azure/CLI@v1
       with:
-        azcliversion: 2.30.0
         inlineScript: >
           echo "Deploying Silo"
           

@@ -58,6 +58,15 @@ jobs:
     #       az config set bicep.use_binary_from_path=false
     #       az bicep install
 
+    # Deploy Bicep file
+    # - name: deploy
+    #   uses: azure/arm-deploy@v1
+    #   with:
+    #    #subscriptionId: ${{ secrets.AZURE_SUBSCRIPTION }}
+    #    resourceGroupName: ${{ secrets.RESOURCE_GROUP_NAME }}
+    #    template: ./main.bicep
+    #    parameters: 'storagePrefix=mystore storageSKU=Standard_LRS'
+    #    failOnStdErr: false
 
     - name: Creating resources
       uses: azure/CLI@v1
@@ -66,8 +75,9 @@ jobs:
           az config set bicep.use_binary_from_path=false
           az bicep install
           echo "Creating resources"
-          echo "Executing az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file '/github/workspace/Azure/main.bicep' --debug"
-          az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file '/github/workspace/Azure/main.bicep' --debug
+          ls
+          echo "Executing az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file './github/workspace/Azure/main.bicep' --debug"
+          az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file './github/workspace/Azure/main.bicep' --debug
           
   build:
     runs-on: ubuntu-latest

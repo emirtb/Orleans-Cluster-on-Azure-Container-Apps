@@ -1,0 +1,4 @@
+
+
+$subscriptionId=$(az account show --query id --output tsv)
+az ad sp create-for-rbac --sdk-auth --name OrleansAcaSample --role contributor --scopes /subscriptions/5ac9b7db-0639-4e0a-a61b-10dac0303d12

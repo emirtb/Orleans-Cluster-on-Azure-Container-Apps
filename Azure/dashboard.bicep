@@ -12,7 +12,7 @@ param maxReplicas int = 1
 @secure()
 param registryPassword string
 
-resource containerApp 'Microsoft.App/ccontainerApps@2022-10-01' ={
+resource containerApp 'Microsoft.App/containerApps@2022-10-01' ={
   name: name
   location: location
   properties:{

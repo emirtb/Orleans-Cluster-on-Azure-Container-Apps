@@ -147,6 +147,7 @@ jobs:
     - name: Installing Container Apps extension
       uses: azure/CLI@v1
       with:
+        azcliversion: 2.30.0
         inlineScript: >
           echo "Installing containerapp extension"
 
@@ -163,6 +164,7 @@ jobs:
     - name: Deploy Silo
       uses: azure/CLI@v1
       with:
+        azcliversion: 2.30.0
         inlineScript: >
           echo "Deploying Silo"
           

@@ -52,7 +52,7 @@ jobs:
           az group create -l ${{ env.REGION }} -n ${{ env.RESOURCE_GROUP_NAME }}
     
     - name: config set bicep
-      uses: azure/CLI@v1
+      uses: azure/CLI@v2
       with:
         inlineScript: >
           az config set bicep.use_binary_from_path=false

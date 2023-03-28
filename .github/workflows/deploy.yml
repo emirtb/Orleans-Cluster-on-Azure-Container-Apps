@@ -57,13 +57,12 @@ jobs:
         inlineScript: >
           echo "config set bicep.use_binary_from_path=false"
           az config set bicep.use_binary_from_path=false
-          echo "END config set bicep.use_binary_from_path=false"
           az bicep install
           echo "Creating resources"
           echo "Executing az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file '/github/workspace/Azure/main.bicep' --debug"
 
           az deployment group create --resource-group ${{ env.RESOURCE_GROUP_NAME }} --template-file '/github/workspace/Azure/main.bicep' --debug
-
+          echo "END config set bicep.use_binary_from_path=false"
   build:
     runs-on: ubuntu-latest
     needs: provision

@@ -5,7 +5,7 @@ resource logs 'Microsoft.OperationalInsights/workspaces@2021-06-01' = {
   name: '${baseName}logs'
   location: location
   properties: any({
-    retentionInDays: 14
+    retentionInDays: 30
     features: {
       searchVersion: 1
       immediatePurgeDataOn30Days: true

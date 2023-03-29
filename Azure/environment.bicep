@@ -5,17 +5,17 @@ resource logs 'Microsoft.OperationalInsights/workspaces@2021-06-01' = {
   name: '${baseName}logs'
   location: location
   properties: any({
-    //retentionInDays: 5
+    retentionInDays: 8
     features: {
       searchVersion: 1
       immediatePurgeDataOn30Days: true
     }
     sku: {
-      name: 'Free'
+      name: 'PerGB2018'
     }
-    // workspaceCapping: {
-    //   dailyQuotaGb: 1
-    // }
+    workspaceCapping: {
+      dailyQuotaGb: 1
+    }
   })
 }
 

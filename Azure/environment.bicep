@@ -8,13 +8,9 @@ resource logs 'Microsoft.OperationalInsights/workspaces@2021-06-01' = {
     retentionInDays: 30
     features: {
       searchVersion: 1
-      immediatePurgeDataOn30Days: true
     }
     sku: {
       name: 'PerGB2018'
-    }
-    workspaceCapping: {
-      dailyQuotaGb: 1
     }
   })
 }
